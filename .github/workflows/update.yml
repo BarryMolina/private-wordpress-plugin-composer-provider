@@ -60,9 +60,7 @@ jobs:
 
       - name: Unzip
         if: ${{ steps.previous_version.outputs.tag != steps.new_version.outputs.new_version }}
-        uses: TonyBogdanov/zip@1.0
-        with:
-          args: unzip -qq ./package.zip -d .
+        run: unzip -qq ./package.zip -d .
 
       - name: Move
         if: ${{ steps.previous_version.outputs.tag != steps.new_version.outputs.new_version }}
